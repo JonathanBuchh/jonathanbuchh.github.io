@@ -23,6 +23,28 @@
 	  color: #0056b3;
 	  text-decoration: none;
 	}
+	.projects {
+	  display: grid;
+	  grid-template-columns: repeat(3,1fr);
+	  grid-gap: 30px;
+	}
+	.projects .project img {
+	    display: block;
+	    margin-bottom: 10px;
+	    width: 100%;
+	    max-width: 640px;
+	    border-radius: 5px;
+	}
+	@media screen and (max-width:480px) {
+	    .projects {
+		grid-template-columns: repeat(1,1fr);
+	    }
+	}
+	@media screen and (max-width:640px) {
+	    .projects {
+		grid-template-columns: repeat(2,1fr);
+	    }
+	}
 	@media (prefers-color-scheme: dark) {
 	  body {
 	    background: #212529;
@@ -36,10 +58,16 @@
 	</head>
 <body>
 	<h1>buchh.fun</h1>
-	<ul>
-	  <li><p><a href="/wordle">Wordle</a>: Essentially a carbon copy of Josh Wardle's <a href="https://powerlanguage.co.uk/wordle/">Wordle</a> circa Janurary 31<sup>st</sup>, 2022</p></li>
-	  <li><p><a href="/boatavg">boatavg</a>: Easily calculate your crew's average 2k</p></li>
-	</ul>
+	<div class="projects">
+	    <div class="project">
+	        <a href="/wordle"><img alt="Wordle logo" src="/images/wordle.png"></a>
+	        <p><a href="/wordle"><strong>Wordle</strong></a>: Essentially a carbon copy of Josh Wardle's Wordle circa Janurary 31<sup>st</sup>, 2022</p>
+	    </div>
+	    <div class="project">
+	        <a href="/boatavg"><img alt="boatavg logo" src="/images/boatavg.png"></a>
+		<p><a href="/boatavg"><strong>boatavg</strong></a>: Easily calculate your crew's average 2k</p>
+	    </div>
+	</div>
 	<small>Made with ♡ by <a href="https://buchh.org">Jonathan Buchholz</a> for the open web.</small>
 </body>
 </html>
